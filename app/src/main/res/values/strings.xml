@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">IT terminlari</string>
+    <string name="saved_word">Saqlanganlar</string>
+    <string name="main">Asosiy</string>
+    <string name="categories">Kategoriyalar</string>
+    <string name="saved">Saqlanganlar</string>
+    <string name="info">Info</string>
+    <string name="dictionary">Dictionary</string>
+    <string name="it_terminlari">IT terminlari</string>
+
+    <string name="info_text">Ushbu dastur <b>IT sohasi</b>ga oid bo\'lgan atamalarning o\'zbekcha
+        tavsiflarini bilishga yordam beradi.\n \nDastur rivojiga
+        hissa qo\'shish uchun uni do\'stlaringizga ham ulashing.\n\n
+        Dastur <b>Admiral Group</b> tomonidan ishlab chiqilgan. Boshqa dasturlar uchun quyidagi manzilga murojaat
+        qilishingiz mumkin:
+    </string>
+    <string name="telegram">Play Market</string>
+
+</resources>

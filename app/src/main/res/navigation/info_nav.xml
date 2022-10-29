@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/source_nav"
+    app:startDestination="@id/sourceFragment2">
+
+    <fragment
+        android:id="@+id/sourceFragment2"
+        android:name="admiral.group.itterminlari.ui.info.InfoFragment"
+        android:label="fragment_source"
+        tools:layout="@layout/fragment_info" />
+</navigation>
