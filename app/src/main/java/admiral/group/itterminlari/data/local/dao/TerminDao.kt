@@ -1,6 +1,6 @@
-package admiral.group.itterminlari.data.local
+package admiral.group.itterminlari.data.local.dao
 
-import admiral.group.itterminlari.domain.model.Termin
+import admiral.group.itterminlari.data.local.entity.Termin
 import androidx.room.*
 import kotlinx.coroutines.flow.Flow
 

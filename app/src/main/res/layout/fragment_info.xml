@@ -7,7 +7,7 @@
     android:layout_marginStart="20dp"
     android:layout_marginEnd="20dp"
     android:layout_marginTop="20dp"
-    tools:context=".ui.info.InfoFragment">
+    tools:context=".presentation.info.InfoFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"

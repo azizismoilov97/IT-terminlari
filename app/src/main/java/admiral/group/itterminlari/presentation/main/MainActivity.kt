@@ -1,9 +1,7 @@
-package admiral.group.itterminlari.ui
+package admiral.group.itterminlari.presentation.main
 
-import admiral.group.itterminlari.BuildConfig
 import admiral.group.itterminlari.R
 import admiral.group.itterminlari.databinding.ActivityMainBinding
-import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
@@ -12,7 +10,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import by.kirich1409.viewbindingdelegate.viewBinding
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.android.synthetic.main.activity_main.*
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity(R.layout.activity_main) {
@@ -24,8 +21,6 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
         super.onCreate(savedInstanceState)
 
         with(binding){
-
-
 
             bottomNavigationView.background = null
 
@@ -55,13 +50,13 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
             }
 
             fab.setOnClickListener {
-             rateMe(it)
+             rateMe()
             }
         }
 
     }
 
-    private fun rateMe(view: View?) {
+    private fun rateMe() {
         val uri = Uri.parse("https://t.me/it_terminlar")
         val rateUs = Intent(Intent.ACTION_VIEW, uri)
         startActivity(rateUs)

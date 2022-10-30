@@ -1,13 +1,11 @@
-package admiral.group.itterminlari.ui.category
+package admiral.group.itterminlari.presentation.category
 
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import admiral.group.itterminlari.R
 import admiral.group.itterminlari.databinding.FragmentCategoryBinding
+import admiral.group.itterminlari.presentation.viewmodel.MainViewModel
 import androidx.fragment.app.viewModels
 import by.kirich1409.viewbindingdelegate.viewBinding
 import dagger.hilt.android.AndroidEntryPoint
@@ -16,7 +14,7 @@ import dagger.hilt.android.AndroidEntryPoint
 class CategoryFragment : Fragment(R.layout.fragment_category) {
 
 
-    private  val viewModel: CategoryViewModel by viewModels()
+    private  val viewModel: MainViewModel by viewModels()
     private  val viewBinding: FragmentCategoryBinding by viewBinding()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

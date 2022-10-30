@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:paddingBottom="?actionBarSize"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context=".ui.description.DescriptionFragment"
+    tools:context=".presentation.description.DescriptionFragment"
     tools:showIn="@layout/fragment_description">
 
     <TextView

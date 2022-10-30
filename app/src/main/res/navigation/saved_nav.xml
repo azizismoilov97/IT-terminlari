@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/savedFragment2"
-        android:name="admiral.group.itterminlari.ui.saved.SavedFragment"
+        android:name="admiral.group.itterminlari.presentation.saved.SavedFragment"
         android:label="fragment_saved"
         tools:layout="@layout/fragment_saved" >
         <action
@@ -16,7 +16,7 @@
     </fragment>
     <fragment
         android:id="@+id/descriptionFragment2"
-        android:name="admiral.group.itterminlari.ui.description.DescriptionFragment"
+        android:name="admiral.group.itterminlari.presentation.description.DescriptionFragment"
         android:label="fragment_description"
         tools:layout="@layout/fragment_description" >
         <argument

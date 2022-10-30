@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/sourceFragment2"
-        android:name="admiral.group.itterminlari.ui.info.InfoFragment"
+        android:name="admiral.group.itterminlari.presentation.info.InfoFragment"
         android:label="fragment_source"
         tools:layout="@layout/fragment_info" />
 </navigation>

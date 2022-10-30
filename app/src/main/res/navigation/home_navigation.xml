@@ -8,7 +8,7 @@
 
     <fragment
         android:id="@+id/homeFragment"
-        android:name="admiral.group.itterminlari.ui.home.HomeFragment"
+        android:name="admiral.group.itterminlari.presentation.home.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" >
         <action
@@ -17,7 +17,7 @@
     </fragment>
     <fragment
         android:id="@+id/descriptionFragment"
-        android:name="admiral.group.itterminlari.ui.description.DescriptionFragment"
+        android:name="admiral.group.itterminlari.presentation.description.DescriptionFragment"
         android:label="fragment_description"
         tools:layout="@layout/fragment_description">
 

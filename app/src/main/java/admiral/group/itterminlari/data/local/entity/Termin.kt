@@ -1,11 +1,12 @@
-package admiral.group.itterminlari.domain.model
+package admiral.group.itterminlari.data.local.entity
 
+import admiral.group.itterminlari.data.local.constant.TerminDatabseConst
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
 
-@Entity(tableName = "termin")
+@Entity(tableName = TerminDatabseConst.TABLE_NOTE)
 data class Termin(
 
     @ColumnInfo(name = "word")

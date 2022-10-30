@@ -1,11 +1,12 @@
-package admiral.group.itterminlari.ui.home
+package admiral.group.itterminlari.presentation.home
 
 import admiral.group.itterminlari.R
 import admiral.group.itterminlari.databinding.FragmentHomeBinding
+import admiral.group.itterminlari.presentation.home.adapter.HomeAdapter
+import admiral.group.itterminlari.presentation.viewmodel.MainViewModel
 import android.os.Bundle
 import android.view.View
 import android.view.inputmethod.EditorInfo
-import android.widget.TextView.OnEditorActionListener
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
@@ -18,7 +19,7 @@ import dagger.hilt.android.AndroidEntryPoint
 class HomeFragment : Fragment(R.layout.fragment_home) {
 
     private val navController by lazy(LazyThreadSafetyMode.NONE) {findNavController()}
-    private val viewModel: HomeViewModel by viewModels()
+    private val viewModel: MainViewModel by viewModels()
     private val viewBinding: FragmentHomeBinding by viewBinding()
     private  lateinit var homeAdapter: HomeAdapter
 
@@ -27,10 +28,10 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
 
            with(viewBinding){
 
-           viewModel.readTermins().observe(viewLifecycleOwner){ list ->
+           viewModel.getTermins().observe(viewLifecycleOwner){ list ->
 
                homeAdapter= HomeAdapter(HomeAdapter.OnClickListener{
-                   viewModel.updateProject(it)
+                   viewModel.updateTermin(it)
                }, HomeAdapter.OnItemClickListener {
                    navController.navigate(HomeFragmentDirections.actionHomeFragmentToDescriptionFragment(it))
                })

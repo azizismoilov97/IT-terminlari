@@ -1,27 +1,19 @@
-package admiral.group.itterminlari.ui.home
+package admiral.group.itterminlari.presentation.home.adapter
 
 import admiral.group.itterminlari.R
-import admiral.group.itterminlari.data.repository.MyRepository
 import admiral.group.itterminlari.databinding.ItemViewBinding
-import admiral.group.itterminlari.domain.model.Termin
-import android.content.Context
-import android.util.Log
+import admiral.group.itterminlari.data.local.entity.Termin
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
-import dagger.hilt.android.qualifiers.ApplicationContext
-import java.util.*
-import javax.inject.Inject
 
 class HomeAdapter(
     private val onClickListener: OnClickListener,
-    private val onItemClickListener:OnItemClickListener
+    private val onItemClickListener: OnItemClickListener
 ): RecyclerView.Adapter<HomeAdapter.ViewHolder>() {
 
-    var isPressed = false
 
     inner class ViewHolder( val viewBinding: ItemViewBinding) : RecyclerView.ViewHolder(viewBinding.root)
 
@@ -86,7 +78,7 @@ class HomeAdapter(
 
     override fun getItemCount(): Int = myTerminList.size
 
-    class OnClickListener(val clickListener: (termin:Termin) -> Unit) {
+    class OnClickListener(val clickListener: (termin: Termin) -> Unit) {
 
         fun onClick(termin: Termin) = clickListener(termin)
 

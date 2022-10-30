@@ -1,7 +1,8 @@
-package admiral.group.itterminlari.ui.description
+package admiral.group.itterminlari.presentation.description
 
 import admiral.group.itterminlari.R
 import admiral.group.itterminlari.databinding.FragmentDescriptionBinding
+import admiral.group.itterminlari.presentation.viewmodel.MainViewModel
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
@@ -10,8 +11,6 @@ import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import by.kirich1409.viewbindingdelegate.viewBinding
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.android.synthetic.main.content_scrolling.*
-import kotlinx.android.synthetic.main.fragment_description.*
 import java.util.*
 import kotlin.math.abs
 
@@ -21,7 +20,7 @@ class DescriptionFragment : Fragment(R.layout.fragment_description) {
 
     private val viewBinding: FragmentDescriptionBinding by viewBinding(FragmentDescriptionBinding::bind)
     private val navController by lazy(LazyThreadSafetyMode.NONE) { findNavController() }
-    private val viewModel: DescriptionViewModel by viewModels()
+    private val viewModel: MainViewModel by viewModels()
     private val args: DescriptionFragmentArgs by navArgs()
     private var wordTxt: String=" "
 
@@ -33,12 +32,12 @@ class DescriptionFragment : Fragment(R.layout.fragment_description) {
             requireActivity().actionBar?.setDisplayHomeAsUpEnabled(true)
             requireActivity().actionBar?.setDisplayShowHomeEnabled(true)
 
-            viewModel.readTermin(args.id).observe(viewLifecycleOwner) { termin ->
+            viewModel.getTermin(args.id).observe(viewLifecycleOwner) { termin ->
 
                 if (termin != null) {
                     wordTxt=termin.word
                     word.text = termin.word.uppercase(Locale.ROOT)
-//                    contentLayout.textDescription.text=termin.description.replaceFirstChar { it.uppercase() }
+                    contentLayout.txtInfo.text=termin.description.replaceFirstChar { it.uppercase() }
                 }
             }
 

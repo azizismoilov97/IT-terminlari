@@ -1,8 +1,8 @@
 package admiral.group.itterminlari.di.datamodule
 
 
-import admiral.group.itterminlari.data.local.TerminDao
-import admiral.group.itterminlari.data.local.TerminDatabase
+import admiral.group.itterminlari.data.local.dao.TerminDao
+import admiral.group.itterminlari.data.local.database.TerminDatabase
 import android.content.Context
 import androidx.room.Room
 import androidx.room.migration.Migration
