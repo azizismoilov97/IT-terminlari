@@ -1,6 +1,6 @@
 package admiral.group.itterminlari.data.local.dao
 
-import admiral.group.itterminlari.data.local.entity.Termin
+import admiral.group.itterminlari.data.local.model.TerminModel
 import androidx.room.*
 import kotlinx.coroutines.flow.Flow
 
@@ -9,13 +9,13 @@ import kotlinx.coroutines.flow.Flow
 interface TerminDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insert(termin: Termin)
+    suspend fun insert(termin: TerminModel)
 
     @Query("SELECT * FROM termin")
-    fun get(): Flow<List<Termin>>
+    fun get(): Flow<List<TerminModel>>
 
     @Query("SELECT * FROM termin WHERE id=:id ")
-    fun getItemById(id:Int): Flow<Termin>
+    fun getItemById(id:Int): Flow<TerminModel>
 
 //    @Update(onConflict = OnConflictStrategy.REPLACE)
 //    suspend fun update(termin: Termin):Int

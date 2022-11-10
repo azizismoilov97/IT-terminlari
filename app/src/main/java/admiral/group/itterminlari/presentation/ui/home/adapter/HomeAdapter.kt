@@ -1,0 +1,95 @@
+package admiral.group.itterminlari.presentation.ui.home.adapter
+
+import admiral.group.itterminlari.R
+import admiral.group.itterminlari.databinding.ItemViewBinding
+import admiral.group.itterminlari.data.local.model.TerminModel
+import admiral.group.itterminlari.domen.entities.TerminEntity
+import android.view.LayoutInflater
+import android.view.ViewGroup
+import androidx.recyclerview.widget.AsyncListDiffer
+import androidx.recyclerview.widget.DiffUtil
+import androidx.recyclerview.widget.RecyclerView
+
+class HomeAdapter(
+    private val onClickListener: OnClickListener,
+    private val onItemClickListener: OnItemClickListener
+): RecyclerView.Adapter<HomeAdapter.ViewHolder>() {
+
+
+    inner class ViewHolder( val viewBinding: ItemViewBinding) : RecyclerView.ViewHolder(viewBinding.root)
+
+    private val differCallback = object : DiffUtil.ItemCallback<TerminEntity>() {
+
+        override fun areItemsTheSame(oldItem: TerminEntity, newItem: TerminEntity): Boolean {
+            return oldItem.id == newItem.id
+        }
+
+        override fun areContentsTheSame(oldItem: TerminEntity, newItem: TerminEntity): Boolean {
+            return oldItem == newItem
+        }
+    }
+
+    private val differ = AsyncListDiffer(this, differCallback)
+
+    var myTerminList: List<TerminEntity>
+        get() = differ.currentList
+        set(value) {
+            differ.submitList(value)
+        }
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+        return ViewHolder(
+            ItemViewBinding.inflate(
+                LayoutInflater.from(parent.context),
+                parent,false)
+        )
+    }
+
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        val result = myTerminList[position]
+
+        holder.viewBinding.apply {
+            txtWord.text=result.word
+
+        }
+
+        holder.viewBinding.item.setOnClickListener {
+            onItemClickListener.onClick(result.id)
+        }
+
+        holder.viewBinding.bookmark.apply {
+            if (result.bookmark==0){
+                this.setBackgroundResource(R.drawable.ic_outline_bookmark_border_24)
+            }else if (result.bookmark==1){
+                this.setBackgroundResource(R.drawable.ic_baseline_bookmark_24)
+            }
+        }
+
+        holder.viewBinding.bookmark.setOnClickListener{
+           if (result.bookmark==1){
+               it.setBackgroundResource(R.drawable.ic_outline_bookmark_border_24)
+               onClickListener.onClick(TerminEntity(result.word, result.description, 0, result.id))
+           }else if (result.bookmark==0){
+               it.setBackgroundResource(R.drawable.ic_baseline_bookmark_24)
+               onClickListener.onClick(TerminEntity(result.word, result.description, 1, result.id))
+           }
+
+        }
+    }
+
+    override fun getItemCount(): Int = myTerminList.size
+
+    class OnClickListener(val clickListener: (termin: TerminEntity) -> Unit) {
+
+        fun onClick(termin: TerminEntity) = clickListener(termin)
+
+    }
+
+    class OnItemClickListener(val clickItemListener: (id:Int) -> Unit) {
+
+        fun onClick(id: Int) = clickItemListener(id)
+
+    }
+
+
+}

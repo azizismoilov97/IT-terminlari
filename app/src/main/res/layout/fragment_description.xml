@@ -7,7 +7,7 @@
     android:fitsSystemWindows="true"
     android:id="@+id/coordinatorLayout"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".presentation.description.DescriptionFragment">
+    tools:context=".presentation.ui.description.DescriptionFragment">
     
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appbar"
