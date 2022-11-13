@@ -1,4 +1,4 @@
-package admiral.group.itterminlari.domen.mapper
+package admiral.group.itterminlari.data.mapper
 
 import admiral.group.itterminlari.data.local.model.TerminModel
 import admiral.group.itterminlari.domen.entities.TerminEntity

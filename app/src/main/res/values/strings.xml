@@ -15,5 +15,7 @@
         qilishingiz mumkin:
     </string>
     <string name="telegram">Play Market</string>
+    <string name="choose">Tanlash</string>
+    <string name="share_app">Dasturni bo\'lishish</string>
 
 </resources>

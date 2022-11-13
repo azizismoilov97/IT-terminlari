@@ -1,6 +1,6 @@
 package admiral.group.itterminlari.domen.usecases
 
-import admiral.group.itterminlari.domen.mapper.toModel
+import admiral.group.itterminlari.data.mapper.toModel
 import admiral.group.itterminlari.domen.entities.TerminEntity
 import admiral.group.itterminlari.domen.repositories.MyRepository
 import javax.inject.Inject

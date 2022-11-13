@@ -6,15 +6,6 @@
         android:title="@string/main" />
 
     <item
-        android:id="@+id/categoryFragment"
-        android:icon="@drawable/category_selector"
-        android:title="@string/categories" />
-
-    <item
-        android:id="@+id/placeholder"
-        android:title="" />
-
-    <item
         android:id="@+id/savedFragment"
         android:icon="@drawable/saved_selector"
         android:title="@string/saved" />

@@ -1,8 +1,10 @@
 package admiral.group.itterminlari.presentation.ui.home
 
 import admiral.group.itterminlari.R
+import admiral.group.itterminlari.presentation.util.Helper
 import admiral.group.itterminlari.databinding.FragmentHomeBinding
 import admiral.group.itterminlari.presentation.ui.home.adapter.HomeAdapter
+import admiral.group.itterminlari.presentation.ui.main.MainActivity
 import admiral.group.itterminlari.presentation.viewmodel.MainViewModel
 import android.os.Bundle
 import android.view.View
@@ -13,6 +15,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import by.kirich1409.viewbindingdelegate.viewBinding
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.android.synthetic.main.activity_main.*
 
 
 @AndroidEntryPoint
@@ -28,6 +31,11 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
 
            with(viewBinding){
 
+
+            goTelegram.setOnClickListener {
+                   Helper.connectViaTelegram(requireContext())
+               }
+
             viewModel.getTermins()
 
             viewModel.listTermins.observe(viewLifecycleOwner){ list ->
@@ -35,6 +43,7 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
                homeAdapter= HomeAdapter(HomeAdapter.OnClickListener{
                    viewModel.updateTermin(it)
                }, HomeAdapter.OnItemClickListener {
+                   (requireActivity() as MainActivity).setGone()
                    navController.navigate(HomeFragmentDirections.actionHomeFragmentToDescriptionFragment(it))
                })
 
@@ -54,8 +63,13 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
                    true
                }
 
-
         }
+
+    }
+
+    override fun onResume() {
+        super.onResume()
+        (requireActivity() as MainActivity).setVisible()
     }
 
 }

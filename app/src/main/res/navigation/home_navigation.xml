@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/mobile_navigation"
+    android:id="@+id/home_navigation"
     app:startDestination="@+id/homeFragment">
 
 
@@ -29,19 +30,15 @@
     </fragment>
 
     <fragment
-        android:id="@+id/categoryFragment"
-        android:name="admiral.group.itterminlari.presentation.ui.category.CategoryFragment"
-        android:label="fragment_category"
-        tools:layout="@layout/fragment_category" />
-
-    <fragment
         android:id="@+id/savedFragment"
         android:name="admiral.group.itterminlari.presentation.ui.saved.SavedFragment"
         android:label="fragment_saved"
         tools:layout="@layout/fragment_saved" >
+
         <action
-            android:id="@+id/action_savedFragment3_to_descriptionFragment"
+            android:id="@+id/action_savedFragment2_to_descriptionFragment"
             app:destination="@id/descriptionFragment" />
+
     </fragment>
 
     <fragment
@@ -49,5 +46,6 @@
         android:name="admiral.group.itterminlari.presentation.ui.info.InfoFragment"
         android:label="fragment_info"
         tools:layout="@layout/fragment_info" />
+
 
 </navigation>

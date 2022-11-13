@@ -35,7 +35,7 @@
                 android:layout_marginTop="30dp"
                 android:layout_height="match_parent">
 
-                <TextView
+                <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/word"
                     android:text="Word"
                     android:gravity="center"
@@ -53,59 +53,48 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
-                    <ImageView
-                        android:id="@+id/img1"
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/textToSpeech"
                         app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintEnd_toStartOf="@id/img2"
-                        app:tint="#fff"
-                        android:layout_marginStart="50dp"
-                        android:background="@drawable/imageview_bac"
-                        android:src="@drawable/ic_baseline_content_copy_24"
-                        android:layout_width="50dp"
-                        android:padding="15dp"
-                        android:layout_height="50dp"/>
-
-                    <ImageView
-                        android:id="@+id/img2"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintStart_toEndOf="@id/img1"
-                        app:tint="#fff"
-                        app:layout_constraintEnd_toStartOf="@id/img3"
-                        android:background="@drawable/imageview_bac"
-                        android:src="@drawable/ic_baseline_share_24"
-                        android:layout_width="50dp"
-                        android:padding="15dp"
-                        android:layout_height="50dp"/>
-
-                    <ImageView
-                        android:id="@+id/img3"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintStart_toEndOf="@id/img2"
-                        app:layout_constraintEnd_toStartOf="@id/img4"
-                        app:tint="#fff"
-                        android:background="@drawable/imageview_bac"
-                        android:src="@drawable/ic_outline_bookmark_border_24"
-                        android:layout_width="50dp"
-                        android:padding="15dp"
-                        android:layout_height="50dp"/>
-
-                    <ImageView
-                        android:id="@+id/img4"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintStart_toEndOf="@id/img3"
-                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintEnd_toStartOf="@id/shareWord"
                         app:tint="#fff"
                         android:background="@drawable/imageview_bac"
                         android:src="@drawable/ic_baseline_volume_up_24"
-                        android:layout_marginEnd="50dp"
+                        app:srcCompat="@drawable/ic_baseline_volume_up_24"
                         android:layout_width="50dp"
                         android:padding="15dp"
                         android:layout_height="50dp"/>
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/shareWord"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/textToSpeech"
+                        app:tint="#fff"
+                        app:layout_constraintEnd_toStartOf="@id/savedWord"
+                        android:background="@drawable/imageview_bac"
+                        android:src="@drawable/ic_baseline_share_24"
+                        app:srcCompat="@drawable/ic_baseline_share_24"
+                        android:layout_width="50dp"
+                        android:padding="15dp"
+                        android:layout_height="50dp"/>
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/savedWord"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/shareWord"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:tint="#fff"
+                        android:background="@drawable/imageview_bac"
+                        android:src="@drawable/ic_outline_bookmark_border_24"
+                        app:srcCompat="@drawable/ic_outline_bookmark_border_24"
+                        android:layout_width="50dp"
+                        android:padding="15dp"
+                        android:layout_height="50dp"/>
+
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
