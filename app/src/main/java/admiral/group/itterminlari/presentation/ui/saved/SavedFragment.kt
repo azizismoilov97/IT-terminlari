@@ -6,7 +6,6 @@ import android.view.View
 import admiral.group.itterminlari.R
 import admiral.group.itterminlari.presentation.util.Helper
 import admiral.group.itterminlari.databinding.FragmentSavedBinding
-import admiral.group.itterminlari.data.local.model.TerminModel
 import admiral.group.itterminlari.domen.entities.TerminEntity
 import admiral.group.itterminlari.presentation.ui.home.adapter.HomeAdapter
 import admiral.group.itterminlari.presentation.ui.main.MainActivity
@@ -45,7 +44,7 @@ class SavedFragment : Fragment(R.layout.fragment_saved) {
                     }
                 }
                 setUpRecyclerView()
-                homeAdapter.myTerminList=myList
+                homeAdapter.loadData(list)
             }
 
         }

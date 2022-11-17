@@ -1,6 +1,7 @@
 package admiral.group.itterminlari.presentation.ui.home
 
 import android.annotation.SuppressLint
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,6 +11,8 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.viewbinding.ViewBinding
 
 typealias Inflate<T> = (LayoutInflater, ViewGroup?, Boolean) -> T
+
+
 
 abstract class BaseRecyclerAdapter<VB : ViewBinding, M:Any> (
     private val inflate: Inflate<VB>):
@@ -45,6 +48,8 @@ abstract class BaseRecyclerAdapter<VB : ViewBinding, M:Any> (
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView)
 }
+
+
 
     class BaseDiffUtil<T : Any> : DiffUtil.ItemCallback<T>() {
 
