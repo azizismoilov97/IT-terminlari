@@ -15,7 +15,6 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import by.kirich1409.viewbindingdelegate.viewBinding
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.android.synthetic.main.activity_main.*
 
 
 @AndroidEntryPoint
@@ -40,14 +39,14 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
 
             viewModel.listTermins.observe(viewLifecycleOwner){ list ->
 
-               homeAdapter= HomeAdapter(HomeAdapter.OnClickListener{
+               homeAdapter= HomeAdapter( HomeAdapter.OnClickListener{
                    viewModel.updateTermin(it)
                }, HomeAdapter.OnItemClickListener {
                    navController.navigate(HomeFragmentDirections.actionHomeFragmentToDescriptionFragment(it))
                    (requireActivity() as MainActivity).setGone()
                })
 
-               homeAdapter.myTerminList=list
+                homeAdapter.loadData(list)
 
                myRecyclerView.apply {
                    layoutManager= LinearLayoutManager(requireContext())
