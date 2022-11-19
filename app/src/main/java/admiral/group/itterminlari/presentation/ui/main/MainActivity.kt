@@ -7,6 +7,8 @@ import android.net.Uri
 import android.opengl.Visibility
 import android.os.Bundle
 import android.view.View
+import android.widget.Toast
+import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
@@ -21,12 +23,39 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
 
     private val binding: ActivityMainBinding by viewBinding(ActivityMainBinding::bind)
 
+    var selectedItemOrder = 0
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        with(binding){
-            bottomNavigationView.setupWithNavController(navController)
+        showToast(selectedItemOrder)
+
+        binding.bottomNavigationView.setOnItemSelectedListener { id ->
+
+            selectedItemOrder = when (id) {
+                R.id.homeFragment -> selectedItemOrder
+                R.id.savedFragment -> 2
+                R.id.infoFragment -> 3
+                else -> {
+                    0
+                }
+            }
+
+            showToast(selectedItemOrder)
+
         }
+
+        // onbackpressed
+        onBackPressedDispatcher.addCallback(this,  object : OnBackPressedCallback(true) {
+            override fun handleOnBackPressed() {
+                if (selectedItemOrder == 0 || selectedItemOrder == 1) {
+                    finish()
+                } else {
+                    binding.bottomNavigationView.setItemSelected(R.id.homeFragment, true)
+                    selectedItemOrder = 1
+                }
+            }
+        })
     }
 
     fun setVisible(){
@@ -35,6 +64,10 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
 
     fun setGone(){
         binding.bottomNavigationView.visibility=View.GONE
+    }
+
+    private fun showToast(order: Int) {
+        Toast.makeText(this, "$order", Toast.LENGTH_SHORT).show()
     }
 
 }

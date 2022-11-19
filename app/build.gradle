@@ -43,7 +43,10 @@ android {
 }
 
 dependencies {
-      // Lottie animation
+       // Timber
+       implementation 'com.jakewharton.timber:timber:5.0.1'
+
+       // Lottie animation
        def lottieVersion = "3.4.0"
        implementation "com.airbnb.android:lottie:$lottieVersion"
 

@@ -1,4 +1,4 @@
-package admiral.group.itterminlari.presentation.di.datamodule
+package admiral.group.itterminlari.data.di.datamodule
 
 
 import admiral.group.itterminlari.data.local.constant.TerminDatabseConst

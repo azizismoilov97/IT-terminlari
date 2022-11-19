@@ -7,4 +7,9 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="bottomNavColor">#FAFDFB</color>
+
+    <color name="cnb_default_badge_color">#F44336</color>
+    <color name="cnb_default_unselected_color">#696969</color>
+    <color name="menuLine">#F0CE60</color>
 </resources>

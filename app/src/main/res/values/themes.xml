@@ -13,6 +13,7 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
+
     </style>
 
     <style name="Theme.Fab_Bottom_app_bar" parent="Theme.MaterialComponents.DayNight.NoActionBar">
@@ -22,7 +23,6 @@
         <item name="colorPrimaryDark">@color/purple_500</item>
         <item name="colorOnPrimary">@color/white</item>
     </style>
-
 
 
 </resources>

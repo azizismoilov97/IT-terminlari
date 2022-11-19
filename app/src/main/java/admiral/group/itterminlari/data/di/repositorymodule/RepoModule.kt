@@ -1,4 +1,4 @@
-package admiral.group.itterminlari.presentation.di.repositorymodule
+package admiral.group.itterminlari.data.di.repositorymodule
 
 import admiral.group.itterminlari.domen.repositories.MyRepository
 import admiral.group.itterminlari.data.repositories.MyRepositoryImpl

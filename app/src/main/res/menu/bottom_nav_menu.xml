@@ -1,17 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
+        app:order="1"
+        app:iconTextSize="5sp"
         android:id="@+id/homeFragment"
-        android:icon="@drawable/home_selector"
+        android:icon="@drawable/ic_home_alt"
         android:title="@string/main" />
 
     <item
+        app:order="2"
+        app:iconTextSize="5sp"
         android:id="@+id/savedFragment"
-        android:icon="@drawable/saved_selector"
+        android:icon="@drawable/ic_heart"
         android:title="@string/saved" />
 
     <item
+        app:order="3"
+        app:iconTextSize="5sp"
         android:id="@+id/infoFragment"
-        android:icon="@drawable/info_selector"
+        android:icon="@drawable/ic_info_circle"
         android:title="@string/info" />
 </menu>

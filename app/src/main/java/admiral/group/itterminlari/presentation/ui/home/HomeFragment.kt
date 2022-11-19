@@ -3,18 +3,22 @@ package admiral.group.itterminlari.presentation.ui.home
 import admiral.group.itterminlari.R
 import admiral.group.itterminlari.presentation.util.Helper
 import admiral.group.itterminlari.databinding.FragmentHomeBinding
+import admiral.group.itterminlari.presentation.common.TerminLog
 import admiral.group.itterminlari.presentation.ui.home.adapter.HomeAdapter
 import admiral.group.itterminlari.presentation.ui.main.MainActivity
 import admiral.group.itterminlari.presentation.viewmodel.MainViewModel
 import android.os.Bundle
 import android.view.View
 import android.view.inputmethod.EditorInfo
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.ui.AppBarConfiguration
 import androidx.recyclerview.widget.LinearLayoutManager
 import by.kirich1409.viewbindingdelegate.viewBinding
 import dagger.hilt.android.AndroidEntryPoint
+import timber.log.Timber
 
 
 @AndroidEntryPoint
@@ -28,8 +32,9 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-           with(viewBinding){
+//        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
 
+           with(viewBinding){
 
             goTelegram.setOnClickListener {
                    Helper.connectViaTelegram(requireContext())
