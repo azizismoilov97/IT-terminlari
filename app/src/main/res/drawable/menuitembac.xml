@@ -11,11 +11,7 @@
     </item>
     <item>
         <shape android:shape="rectangle" >
-            <corners
-                android:bottomRightRadius="30dp"
-                android:bottomLeftRadius="30dp"/>
-            <solid android:color="#fff"/>
-
+            <solid android:color="@color/bottomNavColor"/>
         </shape>
     </item>
 </selector>

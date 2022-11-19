@@ -35,7 +35,6 @@ internal class SelloMenuItemView @JvmOverloads constructor(
 
         isEnabled = item.enabled
         containerMenuItem.isEnabled=false
-        item.menuStyle.textAppearance?.let(menuName::setTextAppearance)
         menuName.text = item.title
         menuName.visibility = View.VISIBLE
         menuName.setTextColor(item.textColor)
@@ -45,8 +44,8 @@ internal class SelloMenuItemView @JvmOverloads constructor(
             unselectedColor = item.menuStyle.unselectedColor
         )
 
-        menuIcon.layoutParams.width = item.menuStyle.iconSize
-        menuIcon.layoutParams.height = item.menuStyle.iconSize
+        menuIcon.layoutParams.width = item.iconSize.toInt()
+        menuIcon.layoutParams.height = item.iconSize.toInt()
         menuIcon.setImageResource(item.iconImage)
         menuIcon.setColorStateListAnimator(
             color = item.iconColor,

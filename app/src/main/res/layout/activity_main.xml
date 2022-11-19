@@ -32,7 +32,6 @@
             android:elevation="30dp"
             android:paddingStart="10dp"
             android:paddingEnd="10dp"
-            app:cnb_iconSize="22dp"
             app:cnb_menuResource="@menu/bottom_nav_menu"/>
 
 

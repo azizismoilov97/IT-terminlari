@@ -77,7 +77,10 @@ internal class MenuParser(private val context: Context) {
             iconImage = sAttr.getResourceId(R.styleable.SelloMenuItem_android_icon, 0),
             enabled = sAttr.getBoolean(R.styleable.SelloMenuItem_android_enabled, true),
             iconColor = readIconActiveColor(sAttr),
-            iconTextSize = sAttr.getDimension(R.styleable.SelloMenuItem_iconTextSize, 10f),
+            iconTextSize = sAttr.getDimension(R.styleable.SelloMenuItem_iconTextSize,
+            context.resources.getDimension(R.dimen.cnb_iconText_size)),
+            iconSize = sAttr.getDimension(R.styleable.SelloMenuItem_iconSize,
+                context.resources.getDimension(R.dimen.cnb_icon_size)),
             tintMode = readIconTintMode(sAttr),
             textColor = readTextActiveColor(sAttr),
             menuStyle = menuStyle

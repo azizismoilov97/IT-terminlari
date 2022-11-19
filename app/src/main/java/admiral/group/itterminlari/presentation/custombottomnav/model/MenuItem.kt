@@ -13,6 +13,7 @@ internal class MenuItem(
     val enabled: Boolean,
     val tintMode: PorterDuff.Mode?,
     val iconTextSize:Float,
+    val iconSize:Float,
     @ColorInt val iconColor: Int,
     @ColorInt val textColor: Int,
     val menuStyle: MenuStyle
