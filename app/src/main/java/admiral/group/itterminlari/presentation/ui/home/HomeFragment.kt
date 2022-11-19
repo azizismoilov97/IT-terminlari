@@ -43,8 +43,8 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
                homeAdapter= HomeAdapter(HomeAdapter.OnClickListener{
                    viewModel.updateTermin(it)
                }, HomeAdapter.OnItemClickListener {
-                   (requireActivity() as MainActivity).setGone()
                    navController.navigate(HomeFragmentDirections.actionHomeFragmentToDescriptionFragment(it))
+                   (requireActivity() as MainActivity).setGone()
                })
 
                homeAdapter.myTerminList=list
