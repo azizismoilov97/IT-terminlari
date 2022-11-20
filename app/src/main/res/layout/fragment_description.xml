@@ -37,7 +37,6 @@
 
                 <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/word"
-                    android:text="Word"
                     android:gravity="center"
                     android:layout_marginTop="30dp"
                     android:textColor="#fff"

@@ -5,7 +5,7 @@
     app:cardCornerRadius="10dp"
     android:id="@+id/item"
     android:layout_margin="5dp"
-    android:backgroundTint="#fff"
+    android:background="#fff"
     android:layout_height="60dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -16,7 +16,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            android:text="Project Manager"
             android:textSize="24sp"
             android:layout_marginStart="20dp"
             android:id="@+id/txt_word"

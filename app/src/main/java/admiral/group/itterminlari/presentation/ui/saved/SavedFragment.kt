@@ -7,6 +7,7 @@ import admiral.group.itterminlari.R
 import admiral.group.itterminlari.presentation.util.Helper
 import admiral.group.itterminlari.databinding.FragmentSavedBinding
 import admiral.group.itterminlari.domen.entities.TerminEntity
+import admiral.group.itterminlari.presentation.ui.home.HomeFragmentDirections
 import admiral.group.itterminlari.presentation.ui.home.adapter.HomeAdapter
 import admiral.group.itterminlari.presentation.ui.main.MainActivity
 import admiral.group.itterminlari.presentation.viewmodel.MainViewModel
@@ -37,14 +38,22 @@ class SavedFragment : Fragment(R.layout.fragment_saved) {
             }
             viewModel.getTermins()
             viewModel.listTermins.observe(viewLifecycleOwner){ list ->
+
+                homeAdapter= HomeAdapter( HomeAdapter.OnClickListener{
+                    viewModel.updateTermin(it)
+                }, HomeAdapter.OnItemClickListener {
+                    navController.navigate(SavedFragmentDirections.actionSavedFragment2ToDescriptionFragment(it))
+                    (requireActivity() as MainActivity).setGone()
+                })
+
                 myList= mutableListOf()
                 list.onEach {
                     if (it.bookmark==1){
                        myList.add(it)
                     }
                 }
+                homeAdapter.loadData(myList)
                 setUpRecyclerView()
-                homeAdapter.loadData(list)
             }
 
         }
@@ -52,13 +61,6 @@ class SavedFragment : Fragment(R.layout.fragment_saved) {
     }
 
     private fun setUpRecyclerView() {
-        
-        homeAdapter= HomeAdapter(HomeAdapter.OnClickListener{
-            viewModel.updateTermin(it)
-        }, HomeAdapter.OnItemClickListener {
-            (requireActivity() as MainActivity).setGone()
-            navController.navigate(SavedFragmentDirections.actionSavedFragment2ToDescriptionFragment(it))
-        })
 
         myRecyclerView.apply {
             layoutManager= LinearLayoutManager(requireContext())

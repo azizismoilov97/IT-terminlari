@@ -6,6 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_gravity="bottom"
+    android:background="#F1F3F3"
     tools:context=".presentation.ui.main.MainActivity">
 
 
@@ -30,8 +31,8 @@
             android:layout_height="60dp"
             app:itemIconSize="20dp"
             app:labelVisibilityMode="labeled"
-            android:visibility="visible"
             android:background="@color/white"
+            android:visibility="visible"
             app:menu="@menu/bottom_nav_menu" />
 
 
