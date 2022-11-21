@@ -136,7 +136,7 @@ dependencies {
         kapt "androidx.room:room-compiler:$room_version"
 
 
-// For Robolectric tests.
+        // For Robolectric tests.
         testImplementation("com.google.dagger:hilt-android-testing:2.44")
         // ...with Kotlin.
         kaptTest("com.google.dagger:hilt-android-compiler:2.44")
@@ -152,7 +152,7 @@ dependencies {
         androidTestAnnotationProcessor("com.google.dagger:hilt-android-compiler:2.44")
     }
 
-hilt {
+    hilt {
     enableAggregatingTask = true
 }
 

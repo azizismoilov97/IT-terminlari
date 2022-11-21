@@ -10,8 +10,9 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewbinding.ViewBinding
 
-typealias Inflate<T> = (LayoutInflater, ViewGroup?, Boolean) -> T
 
+
+typealias Inflate<T> = (LayoutInflater, ViewGroup?, Boolean) -> T
 
 
 abstract class BaseRecyclerAdapter<VB : ViewBinding, M:Any> (
@@ -49,9 +50,9 @@ abstract class BaseRecyclerAdapter<VB : ViewBinding, M:Any> (
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView)
 }
 
+// DuffUtil
 
-
-    class BaseDiffUtil<T : Any> : DiffUtil.ItemCallback<T>() {
+class BaseDiffUtil<T : Any> : DiffUtil.ItemCallback<T>() {
 
     @SuppressLint("DiffUtilEquals")
     override fun areContentsTheSame(oldItem: T, newItem: T): Boolean {

@@ -9,6 +9,5 @@ import javax.inject.Inject
 class InsertTerminUseCase @Inject constructor(
     var myRepository: MyRepository
 ) {
-    suspend operator fun invoke(terminEntity: TerminEntity) =
-        myRepository.insertTermin(terminEntity)
+    suspend operator fun invoke(terminEntity: TerminEntity) = myRepository.insertTermin(terminEntity)
 }

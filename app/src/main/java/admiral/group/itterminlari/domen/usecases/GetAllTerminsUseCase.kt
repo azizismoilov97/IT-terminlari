@@ -9,6 +9,5 @@ import javax.inject.Inject
 class GetAllTerminsUseCase @Inject constructor(
     var myRepository: MyRepository
 ) {
-     operator fun invoke():Flow<List<TerminEntity>> =
-         myRepository.getAllTermins()
+     operator fun invoke():Flow<List<TerminEntity>> = myRepository.getAllTermins()
 }

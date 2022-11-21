@@ -11,6 +11,7 @@ import admiral.group.itterminlari.domen.usecases.InsertTerminUseCase
 import admiral.group.itterminlari.domen.usecases.UpdateTerminUseCase
 import androidx.lifecycle.*
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
@@ -24,8 +25,7 @@ class MainViewModel @Inject constructor(
 ) : ViewModel() {
 
     private var _listTermins = MutableLiveData<List<TerminEntity>>()
-
-
+    
     val listTermins:LiveData<List<TerminEntity>>
       get() = _listTermins
 
@@ -57,14 +57,14 @@ class MainViewModel @Inject constructor(
 
     //// update
     fun updateTermin(terminEntity: TerminEntity)=
-        viewModelScope.launch() {
+        viewModelScope.launch {
             updateTerminUseCase(terminEntity)
         }
 
 
     //// insert
     fun insertTermin(terminEntity: TerminEntity)=
-        viewModelScope.launch {
+        viewModelScope.launch  {
         insertTerminUseCase(terminEntity)
     }
 

@@ -11,6 +11,5 @@ import javax.inject.Inject
 class GetTerminUseCase @Inject constructor(
     var myRepository: MyRepository
 ) {
-   operator fun invoke(id:Int): Flow<TerminEntity> =
-       myRepository.getTermin(id).flowOn(Dispatchers.IO)
+   operator fun invoke(id:Int): Flow<TerminEntity> = myRepository.getTermin(id)
 }

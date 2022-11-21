@@ -9,9 +9,7 @@ class UpdateTerminUseCase @Inject constructor(
     var myRepository: MyRepository
 ) {
 
-    suspend operator fun invoke(terminEntity: TerminEntity)=myRepository.updateTermin(
-        terminEntity
-    )
+    suspend operator fun invoke(terminEntity: TerminEntity)=myRepository.updateTermin(terminEntity)
 
 
 }
