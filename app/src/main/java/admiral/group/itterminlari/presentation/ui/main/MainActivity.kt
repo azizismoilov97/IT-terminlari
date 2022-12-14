@@ -1,16 +1,10 @@
 package admiral.group.itterminlari.presentation.ui.main
 
-import admiral.group.itterminlari.MainActivity2
 import admiral.group.itterminlari.R
-import admiral.group.itterminlari.data.local.model.TerminModel
-import admiral.group.itterminlari.data.mapper.Mapper
 import admiral.group.itterminlari.databinding.ActivityMainBinding
-import admiral.group.itterminlari.domen.entities.TerminEntity
 import android.app.Activity
 import android.content.Context
 import android.content.Intent
-import android.net.Uri
-import android.opengl.Visibility
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
@@ -19,7 +13,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
 import by.kirich1409.viewbindingdelegate.viewBinding
-import com.google.android.material.bottomnavigation.BottomNavigationView
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -39,12 +32,6 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
         with(binding){
             bottomNavigationView.setupWithNavController(navController)
         }
-        Looper.myLooper()?.let {
-            Handler(it).postDelayed({
-                startActivity(newIntent<MainActivity2>())
-            }, 2000)
-        }
-
     }
 
     fun setVisible(){

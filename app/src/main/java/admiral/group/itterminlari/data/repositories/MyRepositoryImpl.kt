@@ -1,8 +1,6 @@
 package admiral.group.itterminlari.data.repositories
 
 import admiral.group.itterminlari.data.local.dao.TerminDao
-import admiral.group.itterminlari.data.local.model.TerminModel
-import admiral.group.itterminlari.data.mapper.Mapper
 import admiral.group.itterminlari.domen.entities.TerminEntity
 import admiral.group.itterminlari.data.mapper.toEntity
 import admiral.group.itterminlari.data.mapper.toModel
