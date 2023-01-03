@@ -18,6 +18,7 @@ class HomeAdapter(private val onClickListener: OnClickListener,
         }
 
         binding.item.setOnClickListener {
+            binding.item.isPressed = it.isPressed
             onItemClickListener.onClick(item.id)
         }
 

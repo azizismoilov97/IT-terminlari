@@ -9,7 +9,9 @@
     android:layout_height="60dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/wordcontainer"
         android:layout_width="match_parent"
+        android:background="@drawable/item_viewbac"
         android:layout_height="match_parent">
 
         <TextView

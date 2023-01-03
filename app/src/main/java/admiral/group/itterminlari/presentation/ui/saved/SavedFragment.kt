@@ -33,9 +33,7 @@ class SavedFragment : Fragment(R.layout.fragment_saved) {
 
         with(viewBinding){
 
-            rateApp.setOnClickListener {
-                Helper.rateApp(requireContext())
-            }
+
             viewModel.getTermins()
             viewModel.listTermins.observe(viewLifecycleOwner){ list ->
 
